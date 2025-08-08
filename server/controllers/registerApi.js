@@ -19,11 +19,11 @@ router.post('/register', async (req, res) => {
     console.log(hashedPassword);
     // Create new user and save to DB
     // password = hashedPassword;
-    const newUser = new User({ username, password: hashedPassword });
+    const newUser = new User({ username, password: hashedPassword, isAdmin: false });
     console.log(newUser);
     await newUser.save();
-
-    res.status(201).json({ message: 'User registered successfully' });
+    
+    res.status(201).json({ message: 'User registered successfully', userId: newUser._id });
   } catch (err) {
     console.log(err.message);
     res.status(500).json({ message: 'Server error' });

@@ -13,6 +13,10 @@ app.use(express.json());
 
 // app.use('/api/auth', require('./routes/auth'));
 app.use('/', require('./routes/auth'));
+app.use('/problems', require('./controllers/problemController'));
+app.use('/', require('./controllers/codeController'));
+app.use('/', require('./controllers/submissionController'));
+
 
 const PORT = process.env.PORT || 4000;
 app.listen(PORT, () => {

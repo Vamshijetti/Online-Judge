@@ -25,6 +25,8 @@ const LoginSignup = () => {
 
         if (res.ok) {
           alert('Registration successful! You can now log in.');
+          // console.log("userid : " + newUser._id;  // ✅ correct
+          localStorage.setItem("userId", data.userId);
           setIsRegistering(false);
           setUsername('');
           setPassword('');
@@ -50,6 +52,9 @@ const LoginSignup = () => {
         if (res.ok) {
           localStorage.setItem(username + password, data.token);
           localStorage.setItem("loggedIn", true);
+          console.log("hello.....");
+          console.log(data.userId);
+          localStorage.setItem("userId", data.userId);
           navigate('/', { replace: true });
         } else {
           alert(data.message || 'Login failed');

@@ -22,3 +22,16 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+html {
+  --_resize-observer-warning: '';
+}
+
+body:has(.monaco-editor) {
+  overflow: hidden !important;
+}
+
+/* Safe suppress */
+.resize-observer {
+  display: none !important;
+}
