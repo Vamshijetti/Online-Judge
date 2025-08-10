@@ -17,6 +17,7 @@ int main() {
     const [output, setOutput] = useState('');
     const [isSubmitting, setIsSubmitting] = useState(false);
     const [isRunning, setIsRunning] = useState(false);
+    const [isReviewing, setIsReviewing] = useState(false);
     const [customInput, setCustomInput] = useState('');
 
 
@@ -40,6 +41,26 @@ int main() {
         fetchProblem();
     }, [problemId]);
 
+    const handleReview = async () => {
+        // Logic to just run the code without saving
+        setIsReviewing(true);
+        try {
+            const response = await fetch('http://localhost:4000/ai-review', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({
+                    code
+                })
+            });
+            const result = await response.json();
+            setOutput(result.review || result.error);
+        } catch (err) {
+            setOutput('Error connecting to server');
+        } finally {
+            setIsReviewing(false);
+        }
+    };
+
     const handleRun = async () => {
         // Logic to just run the code without saving
         setIsRunning(true);
@@ -60,8 +81,6 @@ int main() {
         } finally {
             setIsRunning(false);
         }
-        // console.log("Running code...");
-        // Add run logic here
     };
 
     const handleSubmit = async () => {
@@ -139,54 +158,6 @@ int main() {
 
             {/* Code Editor Panel */}
             <div style={styles.editorPanel}>
-                {/* <div style={styles.editorHeader}>
-                    <div style={styles.languageInfo}>
-                        <span style={styles.languageLabel}>Language:</span>
-                        <span style={styles.languageValue}>C++</span>
-                    </div>
-
-                    <button
-                        onClick={handleSubmit}
-                        style={styles.submitButton}
-                        disabled={isSubmitting}
-                    >
-                        {isSubmitting ? 'Running...' : 'Run'}
-                    </button>
-
-                    <button
-                        onClick={handleSubmit}
-                        style={styles.submitButton}
-                        disabled={isSubmitting}
-                    >
-                        {isSubmitting ? 'Submitting...' : 'Submit'}
-                    </button>
-                </div> */}
-
-                {/* <div style={styles.editorHeader}>
-                    <div style={styles.languageInfo}>
-                        <span style={styles.languageLabel}>Language:</span>
-                        <span style={styles.languageValue}>C++</span>
-                    </div>
-
-                    <div style={styles.buttonGroup}>
-                        <button
-                            onClick={handleRun}
-                            style={styles.submitButton}
-                            disabled={isSubmitting}
-                        >
-                            {isSubmitting ? 'Running...' : 'Run'}
-                        </button>
-
-                        <button
-                            onClick={handleSubmit}
-                            style={{ ...styles.submitButton, marginLeft: '10px' }}
-                            disabled={isSubmitting}
-                        >
-                            {isSubmitting ? 'Submitting...' : 'Submit'}
-                        </button>
-                    </div>
-                </div> */}
-
                 <div style={styles.editorHeader}>
                     <div style={styles.languageInfo}>
                         <span style={styles.languageLabel}>Language:</span>
@@ -195,12 +166,21 @@ int main() {
 
                     <div style={styles.buttonGroup}>
                         <button
-                            onClick={handleRun}
+                            onClick={handleReview}
                             style={styles.submitButton}
+                            disabled={isReviewing}
+                        >
+                            {isReviewing ? 'Reviewing...' : 'AI Review'}
+                           
+                        </button>
+
+                        <button
+                            onClick={handleRun}
+                            style={{ ...styles.submitButton, marginLeft: '10px' }}
                             disabled={isRunning}
                         >
                             {isRunning ? 'Running...' : 'Run'}
-                            {/* {'Run'} */}
+                            
                         </button>
 
                         <button
@@ -212,43 +192,6 @@ int main() {
                         </button>
                     </div>
                 </div>
-
-
-                {/* <MonacoEditor
-          height="60vh"
-          language="cpp"
-          value={code}
-          onChange={setCode}
-          theme="vs-dark"
-          options={{
-            minimap: { enabled: false },
-            fontSize: 14,
-            scrollBeyondLastLine: false,
-            automaticLayout: true,
-            lineNumbers: 'on',
-            roundedSelection: false,
-            scrollbar: {
-              vertical: 'auto',
-              horizontal: 'auto'
-            },
-          }}
-        /> */}
-
-                {/* <div style={{ flex: 1, minHeight: '60vh' }}>
-                    <MonacoEditor
-                        height="100%"
-                        language="cpp"
-                        value={code}
-                        onChange={setCode}
-                        theme="vs-dark"
-                        options={{
-                            minimap: { enabled: false },
-                            fontSize: 14,
-                            scrollBeyondLastLine: false,
-                            automaticLayout: true,
-                        }}
-                    />
-                </div> */}
 
                 <MonacoEditor
                     height="60vh"
@@ -290,8 +233,8 @@ int main() {
 const styles = {
     problemDetailContainer: {
         display: 'flex',
-        height: '100vh', // or keep your current value
-        width: '100vw', // <-- ADD THIS
+        height: '100vh',
+        width: '100vw',
         margin: 0,
         padding: 0,
     },
@@ -363,13 +306,6 @@ const styles = {
         margin: 0,
         fontFamily: 'monospace',
     },
-    // editorHeader: {
-    //     display: 'flex',
-    //     justifyContent: 'space-between',
-    //     padding: '12px 20px',
-    //     backgroundColor: '#2d2d2d',
-    //     alignItems: 'center',
-    // },
     editorHeader: {
         display: 'flex',
         justifyContent: 'space-between',

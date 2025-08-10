@@ -31,7 +31,6 @@ body:has(.monaco-editor) {
   overflow: hidden !important;
 }
 
-/* Safe suppress */
 .resize-observer {
   display: none !important;
 }

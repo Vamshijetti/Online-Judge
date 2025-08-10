@@ -2,7 +2,6 @@ const express = require('express');
 const router = express.Router();
 const Submission = require('../models/Submission');
 
-// GET /submissions/:userId/:problemId
 router.get('/submissions/:userId', async (req, res) => {
     const { userId } = req.params;
 

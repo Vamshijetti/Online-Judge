@@ -1,45 +1,3 @@
-/* .App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-} */
-
-/* src/App.css */
-
-
 html, body, #root {
   height: 100%;
   margin: 0;
@@ -51,10 +9,9 @@ html, body, #root {
   display: flex;
   flex-direction: column;
   height: 100vh;
-  text-align: left; /* Changed from center to left */
+  text-align: left;
 }
 
-/* Navigation styles */
 nav {
   padding: 15px 20px;
   background-color: #f8f9fa;
@@ -77,15 +34,13 @@ nav a {
 
 nav a:hover {
   background-color: #e9ecef;
-  text-decoration: none; /* Remove underline on hover */
+  text-decoration: none;
 }
 
-/* Monaco Editor Customization */
 .monaco-editor .margin {
   background-color: #1e1e1e !important;
 }
 
-/* Scrollbar Styling */
 ::-webkit-scrollbar {
   width: 8px;
   height: 8px;
@@ -104,21 +59,19 @@ nav a:hover {
   background: #a8a8a8;
 }
 
-/* Remove all animation-related styles */
 .App-logo {
-  display: none; /* Hide the logo */
+  display: none;
 }
 
 .App-header {
-  background-color: transparent; /* Remove dark background */
-  min-height: auto; /* Remove full-screen height */
-  display: block; /* Change from flex to block */
-  padding: 20px; /* Add some padding */
-  color: #333; /* Change text color */
-  text-align: left; /* Align text to left */
+  background-color: transparent;
+  min-height: auto;
+  display: block;
+  padding: 20px;
+  color: #333;
+  text-align: left;
 }
 
-/* Remove keyframe animations */
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
@@ -128,7 +81,6 @@ nav a:hover {
   }
 }
 
-/* Suppress ResizeObserver loop errors */
 html {
   --_resize-observer-warning: '';
 }
@@ -137,7 +89,6 @@ body:has(.monaco-editor) {
   overflow: hidden !important;
 }
 
-/* Safe suppress */
 .resize-observer {
   display: none !important;
 }

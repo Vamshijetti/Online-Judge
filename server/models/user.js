@@ -13,9 +13,6 @@ const UserSchema = new mongoose.Schema({
 		type: Boolean,
 		default: false
 	},
-  // id: {
-  //   type: isObjectIdOrHexString
-  // }
 });
 
 module.exports = mongoose.model('user', UserSchema);

@@ -3,7 +3,6 @@ const router = express.Router();
 const bcrypt = require('bcryptjs');
 const User = require('../models/user');
 
-// PUT /forgotPassword
 router.put('/forgotPassword', async (req, res) => {
   const { username, newPassword } = req.body;
 
@@ -13,10 +12,6 @@ router.put('/forgotPassword', async (req, res) => {
       return res.status(400).json({ message: 'User does not exist' });
     }
 
-    // Hash the new password
-   // const hashedPassword = await bcrypt.hash(newPassword, 10);
-
-    // Update and save
     existingUser.password = newPassword;
     await existingUser.save();
 

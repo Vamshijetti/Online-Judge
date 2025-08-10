@@ -19,4 +19,4 @@ COPY . .
 EXPOSE 4000
 
 # Specify the command to run when the container starts
-CMD [ "node", "index.js" ]
+CMD ["npx", "nodemon", "index.js"]

@@ -7,7 +7,6 @@ const { generateFile } = require('../generateFile.js');
 const { generateInputFile } = require('../generateInputFile.js');
 const { executeCpp } = require('../executeCpp.js');
 
-// POST /run - Execute code
 router.post('/run', async (req, res) => {
     const { language = 'cpp', code, input } = req.body;
 
@@ -43,7 +42,6 @@ router.post('/run', async (req, res) => {
     }
 });
 
-// POST /submit - Submit solution for evaluation
 router.post('/submit', async (req, res) => {
     try {
         const { problemId, code, language = 'cpp' } = req.body;

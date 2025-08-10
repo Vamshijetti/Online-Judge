@@ -4,12 +4,10 @@ const { v4: uuid } = require('uuid');
 
 const dirCodes = path.join(__dirname, 'codes');
 
-//to generate file which stores code of 3sum (problems)
 if (!fs.existsSync(dirCodes)) {
     fs.mkdirSync(dirCodes, { recursive: true });
 }
 
-// Creates a temporary file with user's code content
 const generateFile = async (format, content) => {
     const jobID = uuid();
     const filename = `${jobID}.${format}`;

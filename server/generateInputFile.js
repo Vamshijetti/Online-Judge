@@ -4,7 +4,6 @@ const { v4: uuidv4 } = require('uuid');
 
 const dirInput = path.join(__dirname, 'input'); 
 
-//Test cases
 if (!fs.existsSync(dirInput)){
     fs.mkdirSync(dirInput, { recursive: true });
 }
