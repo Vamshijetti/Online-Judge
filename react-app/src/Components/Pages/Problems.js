@@ -5,8 +5,10 @@ export default function Problems() {
   const [problems, setProblems] = useState([]);
   const [loading, setLoading] = useState(true);
 
+  const API_BASE_URL = process.env.REACT_APP_API_BASE_URL;
+
   useEffect(() => {
-    fetch('http://localhost:4000/problems/getAllProblems')
+    fetch(`${API_BASE_URL}/problems/getAllProblems`)
       .then((res) => res.json())
       .then((data) => {
         if (data.success) {

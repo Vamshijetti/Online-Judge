@@ -19,12 +19,12 @@ int main() {
     const [isRunning, setIsRunning] = useState(false);
     const [isReviewing, setIsReviewing] = useState(false);
     const [customInput, setCustomInput] = useState('');
-
+    const API_BASE_URL = process.env.REACT_APP_API_BASE_URL;
 
     useEffect(() => {
         const fetchProblem = async () => {
             try {
-                const response = await fetch(`http://localhost:4000/problem/getProblem/${problemId}`);
+                const response = await fetch(`${API_BASE_URL}/problem/getProblem/${problemId}`);
                 const data = await response.json();
                 if (data.success) {
                     setProblem(data.problem);
@@ -45,7 +45,7 @@ int main() {
         // Logic to just run the code without saving
         setIsReviewing(true);
         try {
-            const response = await fetch('http://localhost:4000/ai-review', {
+            const response = await fetch(`${API_BASE_URL}/ai-review`, {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({
@@ -65,7 +65,7 @@ int main() {
         // Logic to just run the code without saving
         setIsRunning(true);
         try {
-            const response = await fetch('http://localhost:4000/run', {
+            const response = await fetch(`${API_BASE_URL}/run`, {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({
@@ -86,7 +86,7 @@ int main() {
     const handleSubmit = async () => {
         setIsSubmitting(true);
         try {
-            const response = await fetch('http://localhost:4000/submit', {
+            const response = await fetch(`${API_BASE_URL}/submit`, {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({

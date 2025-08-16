@@ -8,6 +8,7 @@ const LoginSignup = () => {
   const [password, setPassword] = useState('');
   const [isRegistering, setIsRegistering] = useState(false);
   const navigate = useNavigate();
+  const API_BASE_URL = process.env.REACT_APP_API_BASE_URL;
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -15,7 +16,8 @@ const LoginSignup = () => {
 
     if (isRegistering) {
       try {
-        const res = await fetch('http://localhost:4000/register', {
+        console.log(API_BASE_URL);
+        const res = await fetch(`${API_BASE_URL}/register`, {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({ username, password }),
@@ -41,7 +43,7 @@ const LoginSignup = () => {
     }
     else {
       try {
-        const res = await fetch('http://localhost:4000/login', {
+        const res = await fetch(`${API_BASE_URL}/login`, {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({ username, password }),

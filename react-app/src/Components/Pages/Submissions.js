@@ -6,6 +6,8 @@ function Submissions() {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState("");
 
+  const API_BASE_URL = process.env.REACT_APP_API_BASE_URL;
+
   useEffect(() => {
     const fetchSubmissions = async () => {
       if (!userId) {
@@ -15,7 +17,7 @@ function Submissions() {
       }
 
       try {
-        const response = await fetch(`http://localhost:4000/submissions/${userId}`);
+        const response = await fetch(`${API_BASE_URL}/submissions/${userId}`);
         const data = await response.json();
 
         if (!response.ok) {
