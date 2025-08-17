@@ -77,7 +77,7 @@ the written code
 - POST /login: login api
     - BODY : {username: "ken", password: "ken@123"}
 - POST /register : api to signup
- - BODY : {username: "ken", password: "ken@123"}
+    - BODY : {username: "ken", password: "ken@123"}
 - GET /problems/getAllProblems : this lists out all the problems available in website to practice
 - GET /problem/getProblem/{problemId} - on choosing any of the probem from above list, this api will be called with problemID
 - POST /ai-review: Get AI feedback on code
@@ -98,10 +98,10 @@ the written code
   docker run -d -p 4000:4000 --name vamshi-compiler vamshidharreddy-cpp-compiler
 
 ## Usage
-  CLick on Problems button to view all the problems available in website
-  Choose a problem and Write C++ code in the editor or use the default example
-  Add input values if your program requires them
-  Click "Run" to execute the code and see the output
-  Click "AI Review" to get feedback and suggestions on your code
-  Click "Submit" to submit the solutions
-  CLick on submissions button to view all your submissions
+  - CLick on Problems button to view all the problems available in website
+  - Choose a problem and Write C++ code in the editor or use the default example
+  - Add input values if your program requires them
+  - Click "Run" to execute the code and see the output
+  - Click "AI Review" to get feedback and suggestions on your code
+  - Click "Submit" to submit the solutions
+  - CLick on submissions button to view all your submissions
