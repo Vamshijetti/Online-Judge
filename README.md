@@ -3,14 +3,14 @@ This is a website similar to Leetcode, where we can practice coding questions. T
 the written code
 
 ## Features : 
-# Code Editor – Write and edit C++ programs with syntax highlighting for better readability.
-# Instant Execution – Compile and run code directly in the browser with real-time results.
-Custom Input Support – Test your code with personalized input values.
-AI-Powered Code Review – Receive instant feedback and improvement suggestions powered by Google’s Gemini AI.
-Responsive Interface – A clean, user-friendly design optimized for all devices.
-Problems page : lists all the porblems avaialble in website for practice
-submissions page : lists out all the submissions made by the user
-Used JWT Authentication
+1. Code Editor – Write and edit C++ programs with syntax highlighting for better readability.
+2. Instant Execution – Compile and run code directly in the browser with real-time results.
+3. Custom Input Support – Test your code with personalized input values.
+4. AI-Powered Code Review – Receive instant feedback and improvement suggestions powered by Google’s Gemini AI.
+5. Responsive Interface – A clean, user-friendly design optimized for all devices.
+6. Problems page : lists all the porblems avaialble in website for practice
+7. submissions page : lists out all the submissions made by the user
+8. Used JWT Authentication
 
 
 ## Tech Stack
