@@ -3,8 +3,8 @@ This is a website similar to Leetcode, where we can practice coding questions. T
 the written code
 
 ## Features : 
-Code Editor – Write and edit C++ programs with syntax highlighting for better readability.
-Instant Execution – Compile and run code directly in the browser with real-time results.
+# Code Editor – Write and edit C++ programs with syntax highlighting for better readability.
+# Instant Execution – Compile and run code directly in the browser with real-time results.
 Custom Input Support – Test your code with personalized input values.
 AI-Powered Code Review – Receive instant feedback and improvement suggestions powered by Google’s Gemini AI.
 Responsive Interface – A clean, user-friendly design optimized for all devices.
