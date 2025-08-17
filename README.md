@@ -106,6 +106,5 @@ the written code
   - Click "Submit" to submit the solutions
   - CLick on submissions button to view all your submissions
 
-
   ## Demo Video
-       - Check out the demo video [here](https://www.loom.com/share/6e65f9543df24ad7b731f399d8f2cbaa?sid=fa0b9de8-32c2-4393-9e1c-6c9f868f7800)
+      [![Watch Demo](https://img.shields.io/badge/▶️%20Watch-Demo%20Video-blue?style=for-the-badge)](https://www.loom.com/share/6e65f9543df24ad7b731f399d8f2cbaa?sid=fa0b9de8-32c2-4393-9e1c-6c9f868f7800)
