@@ -74,19 +74,19 @@ the written code
      (or the port shown in your terminal)
 
 ## API Endpoints
-POST /login: login api
-  BODY : {username: "ken", password: "ken@123"}
-POST /register : api to signup
- BODY : {username: "ken", password: "ken@123"}
-GET /problems/getAllProblems : this lists out all the problems available in website to practice
-GET /problem/getProblem/{problemId} - on choosing any of the probem from above list, this api will be called with problemID
-POST /ai-review: Get AI feedback on code
-  Body: { code: string }
-POST /run : to run the code
-  Body: { language: 'cpp', code: string, input: string }
-POST /submit : to submit the solution, runs with hidden testcases
-  Body: { language: 'cpp', code: string, problemId: string, userId: string }
-POST /submissions/{userId} : lists out all the submissions of this particular user
+- POST /login: login api
+    - BODY : {username: "ken", password: "ken@123"}
+- POST /register : api to signup
+ - BODY : {username: "ken", password: "ken@123"}
+- GET /problems/getAllProblems : this lists out all the problems available in website to practice
+- GET /problem/getProblem/{problemId} - on choosing any of the probem from above list, this api will be called with problemID
+- POST /ai-review: Get AI feedback on code
+  - Body: { code: string }
+- POST /run : to run the code
+  - Body: { language: 'cpp', code: string, input: string }
+- POST /submit : to submit the solution, runs with hidden testcases
+  - Body: { language: 'cpp', code: string, problemId: string, userId: string }
+- POST /submissions/{userId} : lists out all the submissions of this particular user
 
 ## Docker Support
   The backend includes Docker configuration for containerized deployment:
