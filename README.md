@@ -12,44 +12,66 @@ the written code
 7. submissions page : lists out all the submissions made by the user
 8. Used JWT Authentication
 
-
 ## Tech Stack
-  1.Frontend
-    React.js
-    CSS
-    Axios for API calls
-    Monaco Simple Code Editor
-    React Markdown for rendering AI reviews
-  2.Backend
-    Node.js
-    Express.js
-    Google Gemini AI API for code review
-    C++ compilation system
-    MONGODB for database
+1. **Frontend**
+   - React.js
+   - CSS
+   - Axios for API calls
+   - Monaco Simple Code Editor
+   - React Markdown for rendering AI reviews
+
+2. **Backend**
+   - Node.js
+   - Express.js
+   - Google Gemini AI API for code review
+   - C++ compilation system
+   - MongoDB for database
+
 
 ## Installation and Setup
-  Prerequisites
-    Node.js (v22 or higher)
-    npm or yarn
-    C++ compiler on your system
-  Backend Setup
-    Navigate to the backend directory:
-      cd server
-    Install dependencies:
-      npm install
-    Create a .env file with the following variables:
-      PORT=4000
-      GOOGLE_API_KEY=your_google_api_key
-  Start the server:
-      npx nodemon index.js 
-  Frontend Setup
-    Navigate to the frontend directory:
-      cd react-app
-    Install dependencies:
-      npm install
-  Start the development server:
-    npm start
-    Open your browser and navigate to http://localhost:3000 (or the port shown in your terminal)
+
+  1. **Prerequisites**
+   - Node.js (v22 or higher)
+   - npm or yarn
+   - C++ compiler on your system
+
+2. **Backend Setup**
+   - Navigate to the backend directory:
+     ```bash
+     cd server
+     ```
+   - Install dependencies:
+     ```bash
+     npm install
+     ```
+   - Create a `.env` file with the following variables:
+     ```env
+     PORT=4000
+     GOOGLE_API_KEY=your_google_api_key
+     ```
+   - Start the server:
+     ```bash
+     npx nodemon index.js
+     ```
+
+3. **Frontend Setup**
+   - Navigate to the frontend directory:
+     ```bash
+     cd react-app
+     ```
+   - Install dependencies:
+     ```bash
+     npm install
+     ```
+   - Start the development server:
+     ```bash
+     npm start
+     ```
+   - Open your browser and navigate to:
+     ```
+     http://localhost:3000
+     ```
+     (or the port shown in your terminal)
 
 ## API Endpoints
 POST /login: login api
